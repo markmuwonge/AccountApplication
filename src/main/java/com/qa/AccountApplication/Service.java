@@ -69,7 +69,7 @@ public class Service {
 	
 	public long numberOfAccountsByFirstName(String name)
 	{
-		long count = accounts.stream().filter(x -> x.getFirstName().equals(name)).count();
+		long count = accounts.stream().filter(x -> x.getFirstName().equalsIgnoreCase(name)).count();
 		
 		return count;
 	}
