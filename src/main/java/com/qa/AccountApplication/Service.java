@@ -5,11 +5,15 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
+import com.google.gson.Gson;
+
 public class Service {
 	
 	Scanner scanner = new Scanner(System.in);
 	ArrayList<Account> accounts = new ArrayList<>();
 	HashMap<Integer, Account> map = new HashMap<Integer, Account>();
+	
+	Gson gson = new Gson(); 	
 	
 	String firstName = "";
 	String lastName = "";
@@ -18,6 +22,10 @@ public class Service {
 	public Service()
 	{
 		startService();
+		startService();
+		addAccount();
+		mapToJSON();
+		
 	}
 	
 	private void startService()
@@ -32,7 +40,7 @@ public class Service {
 		accounts.get(accounts.size() -1).setFirstName(firstName);
 		accounts.get(accounts.size() -1).setLastName(lastName);
 		accounts.get(accounts.size() -1).setAccountNumber(accountNumber);
-		
+					
 		map.put(accounts.get(accounts.size() -1).getAccountNumber(), accounts.get(accounts.size() -1));
 		
 		accountNumber++;
@@ -51,6 +59,12 @@ public class Service {
 			System.out.print(key.getValue().getAccountNumber());
 			System.out.println();
 		}
+	}
+	
+	private void mapToJSON()
+	{	
+		String json = gson.toJson(map);
+		System.out.println(json);
 	}
 
 }
