@@ -67,9 +67,9 @@ public class Service {
 		System.out.println(json);
 	}
 	
-	public int numberOfAccountsByFirstName(String name)
+	public long numberOfAccountsByFirstName(String name)
 	{
-		int count = 0;
+		long count = accounts.stream().filter(x -> x.getFirstName().equals(name)).count();
 		
 		return count;
 	}
