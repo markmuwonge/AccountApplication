@@ -1,10 +1,31 @@
 package com.qa.AccountApplication;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Account {
+		
 	private String firstName;
 	private String lastName;
+	
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int accountNumber;
 	
+	public Account() {
+		
+	}
+	
+	public Account(String firstName, String lastName, int accountNumber)
+	{
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.accountNumber = accountNumber;
+	}
+		
 	public String getFirstName() {
 		return firstName;
 	}

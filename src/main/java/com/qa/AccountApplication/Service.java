@@ -3,29 +3,23 @@ package com.qa.AccountApplication;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
-import java.util.Scanner;
 
 import com.google.gson.Gson;
 
+
 public class Service {
 	
-	Scanner scanner = new Scanner(System.in);
 	ArrayList<Account> accounts = new ArrayList<>();
 	HashMap<Integer, Account> map = new HashMap<Integer, Account>();
-	
-	Gson gson = new Gson(); 	
-	
-	String firstName = "Mark";
-	String lastName = "Muwonge";
+	Gson gson = new Gson(); 
+
+	String firstName = "";
+	String lastName = "";
 	int accountNumber = 1;
 	
 	public Service()
 	{
-//		startService();
-//		startService();
-		addAccount();
-//		mapToJSON();
-		
+
 	}
 	
 	private void startService()
@@ -73,5 +67,6 @@ public class Service {
 		
 		return count;
 	}
+		
 
 }
