@@ -15,16 +15,16 @@ public class Service {
 	
 	Gson gson = new Gson(); 	
 	
-	String firstName = "";
-	String lastName = "";
+	String firstName = "Mark";
+	String lastName = "Muwonge";
 	int accountNumber = 1;
 	
 	public Service()
 	{
-		startService();
-		startService();
+//		startService();
+//		startService();
 		addAccount();
-		mapToJSON();
+//		mapToJSON();
 		
 	}
 	
@@ -65,6 +65,13 @@ public class Service {
 	{	
 		String json = gson.toJson(map);
 		System.out.println(json);
+	}
+	
+	public long numberOfAccountsByFirstName(String name)
+	{
+		long count = accounts.stream().filter(x -> x.getFirstName().equalsIgnoreCase(name)).count();
+		
+		return count;
 	}
 
 }
