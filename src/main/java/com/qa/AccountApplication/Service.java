@@ -3,29 +3,34 @@ package com.qa.AccountApplication;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
-import java.util.Scanner;
 
 import com.google.gson.Gson;
 
 public class Service {
 	
-	Scanner scanner = new Scanner(System.in);
+//	Scanner scanner = new Scanner(System.in);
 	ArrayList<Account> accounts = new ArrayList<>();
 	HashMap<Integer, Account> map = new HashMap<Integer, Account>();
-	
-	Gson gson = new Gson(); 	
-	
+//	
+	Gson gson = new Gson(); 
+//	
+//	EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("primary");
+//	EntityManager entitymanager = emfactory.createEntityManager( );
+//	
+//	Account account = new Account();
+//	
 	String firstName = "Mark";
 	String lastName = "Muwonge";
 	int accountNumber = 1;
 	
 	public Service()
 	{
-//		startService();
-//		startService();
-		addAccount();
-//		mapToJSON();
-		
+////		startService();
+////		startService();
+//		addAccount();
+////		mapToJSON();
+//	
+//		populateAccountTable();
 	}
 	
 	private void startService()
@@ -73,5 +78,22 @@ public class Service {
 		
 		return count;
 	}
+	
+//	private void populateAccountTable()
+//	{
+//		account.setFirstName("John");
+//		account.setFirstName("Doe");
+//		account.setAccountNumber(1234);
+//		
+//	    entitymanager.persist(account);
+//	    entitymanager.getTransaction().commit();
+//	    
+//	    
+//	    entitymanager.close();
+//	    emfactory.close();
+//	    
+//	    
+//		
+//	}
 
 }
